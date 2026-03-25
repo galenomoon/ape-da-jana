@@ -57,14 +57,14 @@ export function Nearby() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {NEARBY_ITEMS.map((item, idx) => {
             const Icon = ICON_MAP[item.icon];
             const accent = ACCENT_COLORS[idx % ACCENT_COLORS.length];
             return (
               <div
                 key={item.id}
-                className="flex items-center gap-4 p-5 rounded-2xl border transition-all duration-200 hover:-translate-y-0.5"
+                className="flex items-center gap-3 p-4 rounded-2xl border transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   backgroundColor: "var(--cream)",
                   borderColor: "var(--brand-border)",
@@ -73,12 +73,12 @@ export function Nearby() {
               >
                 {/* Ícone */}
                 <div
-                  className="flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0"
                   style={{ backgroundColor: accent.bg }}
                 >
                   {Icon && (
                     <Icon
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                       style={{ color: accent.icon }}
                       aria-hidden="true"
                     />
@@ -86,9 +86,9 @@ export function Nearby() {
                 </div>
 
                 {/* Texto */}
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p
-                    className="text-sm font-semibold leading-tight truncate"
+                    className="text-sm font-semibold leading-tight"
                     style={{ color: "var(--ocean-800)", fontFamily: "var(--font-body)" }}
                   >
                     {item.label}
