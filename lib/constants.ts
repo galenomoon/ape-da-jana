@@ -317,6 +317,60 @@ export const LOCATION = {
 };
 
 // ============================================================
+// GALERIA — Cômodos do apartamento
+// SUBSTITUIR: adicione o caminho real da imagem em cada `src`
+// Coloque as fotos em /public/rooms/ (ex: /rooms/sala.jpg)
+// Dimensões recomendadas: 1200x800px, formato JPG ou WebP
+// ============================================================
+export const GALLERY_TITLE = "Conheça o apartamento";
+export const GALLERY_SUBTITLE = "Cada canto pensado para o seu conforto.";
+
+export const GALLERY_ROOMS = [
+  {
+    id: "sala",
+    name: "Sala de Estar",
+    description: "Sala aconchegante com sofá, TV e Netflix incluída. Espaço para relaxar depois de um dia de praia.",
+    src: "", // SUBSTITUIR: "/rooms/sala.jpg"
+    icon: "🛋️",
+  },
+  {
+    id: "quarto-casal",
+    name: "Quarto Casal",
+    description: "Quarto com cama de casal, ar-condicionado split, guarda-roupa e iluminação aconchegante.",
+    src: "", // SUBSTITUIR: "/rooms/quarto-casal.jpg"
+    icon: "🛏️",
+  },
+  {
+    id: "quarto-beliche",
+    name: "Quarto Beliche",
+    description: "Quarto com beliche e ar-condicionado split. Perfeito para crianças ou o quarto extra do grupo.",
+    src: "", // SUBSTITUIR: "/rooms/quarto-beliche.jpg"
+    icon: "🪵",
+  },
+  {
+    id: "cozinha",
+    name: "Cozinha",
+    description: "Cozinha totalmente equipada com fogão, geladeira, micro-ondas e utensílios para se sentir em casa.",
+    src: "", // SUBSTITUIR: "/rooms/cozinha.jpg"
+    icon: "🍳",
+  },
+  {
+    id: "banheiro",
+    name: "Banheiro",
+    description: "Banheiro completo e bem conservado, com box, chuveiro quente e toalhas incluídas.",
+    src: "", // SUBSTITUIR: "/rooms/banheiro.jpg"
+    icon: "🚿",
+  },
+  {
+    id: "area-externa",
+    name: "Vista e Arredores",
+    description: "A poucos passos da Praia do Ocian — acorde, vista o short e já esteja na areia.",
+    src: "", // SUBSTITUIR: "/rooms/area-externa.jpg"
+    icon: "🌊",
+  },
+];
+
+// ============================================================
 // TEXTOS — Proximidades
 // ============================================================
 export const NEARBY_TITLE = "O que tem por perto";

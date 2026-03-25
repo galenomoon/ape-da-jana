@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
 import { Location } from "@/components/sections/location";
 import { CtaSection } from "@/components/sections/cta-section";
+import { Gallery } from "@/components/sections/gallery";
 import { Nearby } from "@/components/sections/nearby";
 import { FloatingCta } from "@/components/ui/floating-cta";
 
@@ -25,8 +26,11 @@ export default function HomePage() {
         {/* 3. InfoCards — números de impacto (42m², 5 hóspedes, +45 avaliações, nota 9.3) */}
         <InfoCards />
 
-        {/* 4. Services — quartos e apartamento completo com preço */}
+        {/* 4. Services — apartamento completo com preço */}
         <Services />
+
+        {/* 5. Gallery — carrossel de fotos dos cômodos */}
+        <Gallery />
 
         {/* 5. Testimonials — depoimentos de hóspedes */}
         <Testimonials />
