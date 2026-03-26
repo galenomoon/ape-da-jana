@@ -341,11 +341,11 @@ export const GALLERY_ROOMS = [
     icon: "🛏️",
   },
   {
-    id: "quarto-beliche",
-    name: "Quarto Beliche",
-    description: "Quarto com beliche e ar-condicionado split. Perfeito para crianças ou o quarto extra do grupo.",
-    src: "/rooms/quarto-beliche.jpeg",
-    icon: "🪵",
+    id: "mesa-jantar",
+    name: "Mesa de Jantar",
+    description: "Espaço de refeições confortável para toda a família reunida após um dia de sol e praia.",
+    src: "/rooms/mesa-de-jantar.jpeg",
+    icon: "🍽️",
   },
   {
     id: "cozinha",
@@ -355,11 +355,11 @@ export const GALLERY_ROOMS = [
     icon: "🍳",
   },
   {
-    id: "banheiro",
-    name: "Banheiro",
-    description: "Banheiro completo e bem conservado, com box, chuveiro quente e toalhas incluídas.",
-    src: "/rooms/banheiro.jpeg",
-    icon: "🚿",
+    id: "estacionamento",
+    name: "Estacionamento",
+    description: "Vaga de garagem coberta incluída na diária, sem custo adicional. Chegue de carro com tranquilidade.",
+    src: "/rooms/estacionamento.jpeg",
+    icon: "🚗",
   },
   {
     id: "area-externa",
