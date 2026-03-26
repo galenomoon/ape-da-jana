@@ -330,42 +330,42 @@ export const GALLERY_ROOMS = [
     id: "sala",
     name: "Sala de Estar",
     description: "Sala aconchegante com sofá, TV e Netflix incluída. Espaço para relaxar depois de um dia de praia.",
-    src: "", // SUBSTITUIR: "/rooms/sala.jpg"
+    src: "/rooms/sala-de-estar.jpeg",
     icon: "🛋️",
   },
   {
     id: "quarto-casal",
     name: "Quarto Casal",
     description: "Quarto com cama de casal, ar-condicionado split, guarda-roupa e iluminação aconchegante.",
-    src: "", // SUBSTITUIR: "/rooms/quarto-casal.jpg"
+    src: "/rooms/quarto-casal.jpeg",
     icon: "🛏️",
   },
   {
     id: "quarto-beliche",
     name: "Quarto Beliche",
     description: "Quarto com beliche e ar-condicionado split. Perfeito para crianças ou o quarto extra do grupo.",
-    src: "", // SUBSTITUIR: "/rooms/quarto-beliche.jpg"
+    src: "/rooms/quarto-beliche.jpeg",
     icon: "🪵",
   },
   {
     id: "cozinha",
     name: "Cozinha",
     description: "Cozinha totalmente equipada com fogão, geladeira, micro-ondas e utensílios para se sentir em casa.",
-    src: "", // SUBSTITUIR: "/rooms/cozinha.jpg"
+    src: "/rooms/cozinha.jpeg",
     icon: "🍳",
   },
   {
     id: "banheiro",
     name: "Banheiro",
     description: "Banheiro completo e bem conservado, com box, chuveiro quente e toalhas incluídas.",
-    src: "", // SUBSTITUIR: "/rooms/banheiro.jpg"
+    src: "/rooms/banheiro.jpeg",
     icon: "🚿",
   },
   {
     id: "area-externa",
     name: "Vista e Arredores",
     description: "A poucos passos da Praia do Ocian — acorde, vista o short e já esteja na areia.",
-    src: "", // SUBSTITUIR: "/rooms/area-externa.jpg"
+    src: "/rooms/praia.jpeg",
     icon: "🌊",
   },
 ];
