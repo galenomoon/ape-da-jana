@@ -1,14 +1,14 @@
-import { MapPin, Clock, Users, ShieldCheck } from "lucide-react";
+import { MapPin, Clock, ShieldCheck } from "lucide-react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { SiAirbnb, SiBookingdotcom } from "react-icons/si";
 import {
   LOCATION,
-  GOOGLE_MAPS_EMBED_URL,
   INSTAGRAM_URL,
   BOOKING_URL,
   AIRBNB_URL,
   buildWhatsAppHref,
 } from "@/lib/constants";
+import { LazyMap } from "@/components/ui/lazy-map";
 
 export function Location() {
   return (
@@ -38,7 +38,7 @@ export function Location() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-          {/* Mapa embed */}
+          {/* Mapa */}
           <div
             className="rounded-2xl overflow-hidden"
             style={{
@@ -46,16 +46,7 @@ export function Location() {
               border: "1.5px solid var(--brand-border)",
             }}
           >
-            {/* SUBSTITUIR: gerar URL em google.com/maps > Compartilhar > Incorporar mapa */}
-            <iframe
-              src={GOOGLE_MAPS_EMBED_URL}
-              className="w-full"
-              style={{ height: "380px", filter: "saturate(0.85) contrast(1.05)" }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização do Apê da Jana"
-              aria-label="Mapa mostrando a localização do Apê da Jana em Praia Grande, bairro Ocian"
-            />
+            <LazyMap />
           </div>
 
           {/* Info cards */}

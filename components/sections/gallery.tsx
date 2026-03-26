@@ -1,64 +1,26 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import { GALLERY_ROOMS, GALLERY_TITLE, GALLERY_SUBTITLE } from "@/lib/constants";
 
-const SLIDESHOW_INTERVAL = 2000;
-
 export function Gallery() {
   const [active, setActive] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [fading, setFading] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const pausedRef = useRef(false);
-  const activeRef = useRef(0);
 
   const room = GALLERY_ROOMS[active];
 
   const openLightbox = () => setLightboxOpen(true);
   const closeLightbox = () => setLightboxOpen(false);
 
-  const transitionTo = useCallback((idx: number) => {
-    setFading(true);
-    setTimeout(() => {
-      activeRef.current = idx;
-      setActive(idx);
-      setFading(false);
-    }, 300);
-  }, []);
+  const goPrev = useCallback(() =>
+    setActive((p) => (p === 0 ? GALLERY_ROOMS.length - 1 : p - 1)), []);
 
-  const goPrev = useCallback(() => {
-    pausedRef.current = true;
-    transitionTo(active === 0 ? GALLERY_ROOMS.length - 1 : active - 1);
-    setTimeout(() => { pausedRef.current = false; }, SLIDESHOW_INTERVAL * 2);
-  }, [active, transitionTo]);
+  const goNext = useCallback(() =>
+    setActive((p) => (p === GALLERY_ROOMS.length - 1 ? 0 : p + 1)), []);
 
-  const goNext = useCallback(() => {
-    pausedRef.current = true;
-    transitionTo(active === GALLERY_ROOMS.length - 1 ? 0 : active + 1);
-    setTimeout(() => { pausedRef.current = false; }, SLIDESHOW_INTERVAL * 2);
-  }, [active, transitionTo]);
-
-  const goToIndex = useCallback((idx: number) => {
-    pausedRef.current = true;
-    transitionTo(idx);
-    setTimeout(() => { pausedRef.current = false; }, SLIDESHOW_INTERVAL * 2);
-  }, [transitionTo]);
-
-  // Auto-slideshow
-  useEffect(() => {
-    if (lightboxOpen) return;
-    timerRef.current = setInterval(() => {
-      if (pausedRef.current) return;
-      const next = activeRef.current === GALLERY_ROOMS.length - 1 ? 0 : activeRef.current + 1;
-      transitionTo(next);
-    }, SLIDESHOW_INTERVAL);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [lightboxOpen, transitionTo]);
+  const goToIndex = (idx: number) => setActive(idx);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -117,16 +79,7 @@ export function Gallery() {
               className="group relative block w-full overflow-hidden focus:outline-none"
               style={{ aspectRatio: "16/9" }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  opacity: fading ? 0 : 1,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <RoomVisual room={room} priority={active === 0} fill />
-              </div>
+              <RoomVisual room={room} priority={active === 0} fill />
 
               {/* Overlay hover */}
               <div
@@ -161,23 +114,6 @@ export function Gallery() {
                 {active + 1} / {GALLERY_ROOMS.length}
               </div>
 
-              {/* Barra de progresso do slideshow */}
-              {!lightboxOpen && (
-                <div
-                  className="absolute bottom-0 left-0 right-0 pointer-events-none"
-                  style={{ height: "3px", backgroundColor: "rgba(255,255,255,0.2)" }}
-                  aria-hidden="true"
-                >
-                  <div
-                    key={active}
-                    style={{
-                      height: "100%",
-                      backgroundColor: "var(--coral)",
-                      animation: `slideshow-progress ${SLIDESHOW_INTERVAL}ms linear`,
-                    }}
-                  />
-                </div>
-              )}
             </button>
 
             {/* Info + navegação */}

@@ -2,6 +2,7 @@ import { Star, MapPin, Users, Wifi, Wind, Car } from "lucide-react";
 import { SiAirbnb, SiBookingdotcom } from "react-icons/si";
 import { FaWhatsapp } from "react-icons/fa";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
+import { HeroSlideshow } from "@/components/ui/hero-slideshow";
 import {
   HERO,
   BOOKING_URL,
@@ -161,29 +162,9 @@ export function Hero() {
               className="rounded-2xl overflow-hidden"
               style={{ boxShadow: "var(--shadow-xl)" }}
             >
-              {/* Área da foto — placeholder */}
-              {/* SUBSTITUIR: trocar pelo componente next/image com foto real do apartamento */}
-              <div
-                className="relative h-52 flex items-end p-4"
-                style={{
-                  background:
-                    "linear-gradient(160deg, var(--ocean-500) 0%, var(--ocean-300) 50%, var(--sand-400) 100%)",
-                }}
-                aria-hidden="true"
-              >
-                {/* Padrão onda decorativo */}
-                <div
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.4) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(252,112,53,0.3) 0%, transparent 35%)",
-                  }}
-                />
-                <span
-                  className="relative z-10 text-xs font-medium text-white/80 bg-black/20 rounded-lg px-3 py-1.5 backdrop-blur-sm"
-                >
-                  📸 Adicionar foto do apartamento
-                </span>
+              {/* Slideshow de fotos */}
+              <div className="relative h-52">
+                <HeroSlideshow />
               </div>
 
               {/* Detalhes do card */}
