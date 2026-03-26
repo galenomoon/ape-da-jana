@@ -116,7 +116,7 @@ export function CtaSection() {
           className="mt-7 text-sm"
           style={{ color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-body)" }}
         >
-          A partir de R$ 400/noite &bull; Consulte disponibilidade para sua data
+          A partir de R$ 260/noite &bull; Consulte disponibilidade para sua data
         </p>
       </div>
 

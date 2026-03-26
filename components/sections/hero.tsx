@@ -234,11 +234,11 @@ export function Hero() {
                       className="text-2xl font-bold text-[var(--coral)]"
                       style={{ fontFamily: "var(--font-display)" }}
                     >
-                      R$ 400
+                      R$ 260
                     </span>
                     <span className="text-sm text-[var(--brand-text-muted)]"> /noite</span>
                   </div>
-                  <span className="text-xs text-[var(--brand-text-muted)]">até R$ 600</span>
+                  <span className="text-xs text-[var(--brand-text-muted)]">até R$ 300 (fim de semana)</span>
                 </div>
 
                 {/* CTA do card */}
